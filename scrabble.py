@@ -16,7 +16,7 @@ def signature(s):
 
 def all_possibilities(filename, scrabble_letters, min_num_letters, total_word_length):
     """
-    Takes in a filename, the letters you have in your tray, the minimum number of 
+    Takes in a filename, the letters you have in your tray, the minimum number of
     letters in your tray that you need to include in your word, and the maximum length
     of word you want.
     """
@@ -45,4 +45,4 @@ if __name__ == '__main__':
     scrabble_sig = signature(scrabble_letters)
     d = all_possibilities('words.txt', scrabble_sig, 5, 9)
     print d
- 
+

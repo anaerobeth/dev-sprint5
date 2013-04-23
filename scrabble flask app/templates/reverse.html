@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block body %}
+    <h2>Reverse-a-String</h2>
+    <p>Enter a string to reverse:</p>
+    <form action="/" method="post">
+        <input type="text" name="expression" size=40 />
+        <input type="submit" value="remote" />
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            Results:
+            <pre>
+                {% for message in messages %}
+{{message}}
+                {% endfor %}
+            </pre>
+        {% endif %}
+    {% endwith %}
+{% endblock %}
