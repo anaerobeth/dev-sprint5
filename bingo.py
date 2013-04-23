@@ -44,8 +44,9 @@ def sort_anagrams(mydict):
 
 
     print "Most possible bingo"
-    for i in range(2):
+    for i in range(8):
         print anagrams_lists[i]
 
 words_dict = build_dict(wordlist)
 sort_anagrams(words_dict)
+
