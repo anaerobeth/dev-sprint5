@@ -10,32 +10,13 @@
         <div id="content">
             {% block body %}{% endblock %}
         </div>
-        <div id="nav">
-            Navigation<br />
-            <ul>
-                {% block nav %}{% endblock %}
-                <li><a href="{{url_for('main')}}">index</a></li>
-                <li><a href="/about/">about</a></li>
-                <li><a href="/contact/">contact</a></li>
-                <hr id="nav"/>
-                {% if 'username' in session %}
-                <li><a href="{{url_for('remote')}}">remote</a></li>
-                <li><a href="{{url_for('reverse')}}">reverse</a></li>
-                <li><a href="{{url_for('gallery')}}">gallery</a></li>
-                <li><a href="{{url_for('music')}}">music</a></li>
-                <li><a href="{{url_for('login')}}">logout</a>
-                {% else %}
-                <li><a href="{{url_for('login')}}">login</a>
-                {% endif %}
-            </ul>
-        </div>
-        <div id="flashed">
+
         {% with messages = get_flashed_messages() %}
         {% for message in messages %}
             {{message}}
         {% endfor %}
         {% endwith %}
-        </div>
+
         <script src="http://code.jquery.com/jquery-latest.js"></script>
     	<script src="js/bootstrap.min.js"></script>
     </body>
