@@ -1,11 +1,25 @@
 {% extends "base.html" %}
 {% block body %}
+
+    <div class="hero-unit">
     <h1>Scrabble Helper App</h1>
+    <br />
     <h3>What letter tiles do you have in your rack?</h3>
+    <br />
     <form action="/rack" method="post">
         <section>
-            <input type="text" name="letters" size=60/>
+            <input type="text" name="letters" style="width:450px" />
+            <br />
             <input class="btn" type="submit" value="Suggest words" />
+            <br />
         </section>
     </form>
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+            {{message}}
+        {% endfor %}
+    {% endwith %}
+
 {% endblock %}
