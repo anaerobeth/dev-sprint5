@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block body %}
-
+<div class="container">
 
     {% with messages = get_flashed_messages() %}
         {% for message in messages %}
             {{message}}
         {% endfor %}
     {% endwith %}
+</div>
 
 {% endblock %}

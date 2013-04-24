@@ -8,7 +8,7 @@ import settings
 #Views
 from main import Main
 from rack import Rack
-from scrabble_helper import Scrabble_helper
+
 
 app = flask.Flask(__name__)
 app.secret_key = settings.secret_key
