@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 {% block body %}
     <h1>Scrabble Helper App</h1>
-
+    <h3>What letter tiles do you have in your rack?</h3>
+    <form action="/rack" method="post">
+        <section>
+            <input type="text" name="letters" size=60/>
+            <input class="btn" type="submit" value="Suggest words" />
+        </section>
+    </form>
 {% endblock %}
