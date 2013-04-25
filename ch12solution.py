@@ -1,4 +1,4 @@
-# http://epequeno.wordpress.com/2011/12/27/exercise-12-04/
+# solutions from http://epequeno.wordpress.com/2011/12/27/exercise-12-04/
 
 words_file = open('words.txt', 'r')
 
