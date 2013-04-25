@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 {% block body %}
-<div class="container">
-
+    <div class="hero-unit">
+    <h1>Scrabble Helper App</h1>
+    <br />
+    <h3>These are the words you can form with your tiles:</h3>
     {% with messages = get_flashed_messages() %}
         {% for message in messages %}
-            {{message}}
+            <ul class="inline">
+                {% for m in message %}
+                    <li>{{m}}</li>
+            {% endfor %}
+            </ul>
         {% endfor %}
     {% endwith %}
-</div>
+    </div>
 
 {% endblock %}

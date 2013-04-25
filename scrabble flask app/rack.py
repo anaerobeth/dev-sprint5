@@ -2,6 +2,8 @@ import flask, flask.views
 import os
 
 class Rack(flask.views.MethodView):
+    global make_word_dict, signature, all_possibilities, d, p
+
     def get(self):
         return flask.render_template("rack.html")
 
@@ -14,18 +16,14 @@ class Rack(flask.views.MethodView):
                 scrabble_dict[letter] = 1
         return scrabble_dict
 
+
     def signature(s):
         t = list(s)
         scrabble_dict = make_word_dict(t)
-        print scrabble_dict
         return scrabble_dict
 
     def all_possibilities(filename, scrabble_letters, min_num_letters, total_word_length):
-        """
-        Takes in a filename, the letters you have in your tray, the minimum number of
-        letters in your tray that you need to include in your word, and the maximum length
-        of word you want.
-        """
+
         d = []
         for line in open(filename):
             word = line.strip().lower()
@@ -46,7 +44,8 @@ class Rack(flask.views.MethodView):
         return d
 
     def post(self):
-        scrabble_letters = 'catapult'
+        scrabble_letters = str(flask.request.form['letters'])
+        #scrabble_letters = 'catapult'
         scrabble_sig = signature(scrabble_letters)
         d = all_possibilities('words.txt', scrabble_sig, 5, 9)
 
@@ -55,4 +54,5 @@ class Rack(flask.views.MethodView):
         return flask.redirect(flask.url_for('rack'))
 
 
-
+# if __name__ == "__rack__":
+#     rack()

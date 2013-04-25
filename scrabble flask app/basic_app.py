@@ -9,7 +9,6 @@ import settings
 from main import Main
 from rack import Rack
 
-
 app = flask.Flask(__name__)
 app.secret_key = settings.secret_key
 
